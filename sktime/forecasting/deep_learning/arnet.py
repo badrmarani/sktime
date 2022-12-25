@@ -111,7 +111,7 @@ class ARNetwork(BaseDeepForecaster):
         ) = ar_network.build_network(ar_order)
         print(self.input_layer, self.output_layer, self.output_tensor)
 
-    def arnet_loss_fn(self, y_true, y_pred):
+    def _arnet_loss_fn(self, y_true, y_pred):
         loss = keras.losses.mean_squared_error(y_true, y_pred)
 
         reg_fn = tf.zeros(shape=(1,))
